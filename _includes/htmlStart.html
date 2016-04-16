@@ -1,3 +1,8 @@
+{% assign base = './' %}
+{% assign depth = page.url | split: '/' | size | minus: 1 %}
+{% if    depth == 1 %}{% assign base = '../' %}
+{% elsif depth == 2 %}{% assign base = '../../' %}
+{% elsif depth == 3 %}{% assign base = '../../../' %}{% endif %}
 <!DOCTYPE HTML>
 <html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
@@ -14,11 +19,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Analog Poem"> -->
 
-<link rel="stylesheet" href="/vendor/bootstrap.min.css">
-<link rel="stylesheet" href="/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="{{ base }}vendor/bootstrap.min.css">
+<link rel="stylesheet" href="{{ base }}vendor/font-awesome.min.css">
 
-<!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
-<link rel="stylesheet" href="/css/main.css" />
-<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
+<!--[if lte IE 8]><script src="{{ base }}js/ie/html5shiv.js"></script><![endif]-->
+<link rel="stylesheet" href="{{ base }}css/main.css" />
+<!--[if lte IE 8]><link rel="stylesheet" href="{{ base }}css/ie8.css" /><![endif]-->
 </head>
 <body ng-app="analogPoem">
