@@ -1,0 +1,123 @@
+.appear[data-src], .appear[data-bkg], .appear [data-src], .appear [data-bkg] {
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in;
+     -moz-transition: opacity 1s ease-in;
+          transition: opacity 1s ease-in;
+}
+.appeared[data-src], .appeared[data-bkg], .appeared [data-src], .appeared [data-bkg] {
+  opacity: 1;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.video-container {
+  max-width: 400px;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lightbox {
+  display: block;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, .8);
+  padding: 5%;
+  text-align: center;
+  -webkit-transform: translateZ(0);
+     -moz-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-transition: all .1s ease-in-out;
+     -moz-transition: all .1s ease-in-out;
+          transition: all .1s ease-in-out;
+}
+.lightbox.off {
+  display: block;
+  opacity: 0;
+  z-index: -1;
+}
+.lightbox > * {
+  height: 80vh;
+  text-align: center;
+}
+.lightbox a {
+  outline: none;
+}
+.lightbox img {
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh;
+}
+
+.slideshow {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .slideshow {
+    max-height: 80vh;
+  }
+}
+.slideshow slide {
+  display: block;
+  max-width: 100%;
+}
+.slideshow img {
+  display: block;
+  margin: auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh;
+}
+.slick-slide {
+  outline: none;
+}
+.slick-arrow:before {
+  color: #000;
+}
+
+.img-responsive {
+  margin: auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.thumbnails li {
+  width: 100px;
+  height: 80px;
+}
+.thumbnails .current {
+  position: relative;
+}
+.thumbnails .current:after {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  left: 25%;
+  right: 25%;
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
