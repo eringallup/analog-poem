@@ -1630,6 +1630,7 @@
 		a:hover {
 			color: #26a2c6;
 			border-bottom-color: transparent;
+			text-decoration: none;
 		}
 
 	sub {
