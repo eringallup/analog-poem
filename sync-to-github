@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if cd "`dirname \"$0\"`"; then
+  absdirpath=`pwd`
+  cd "$OLDPWD" || exit 1
+else
+  exit 1
+fi
+# echo "pwd: `pwd`"
+# echo "script name: $0"
+# echo "dirname: $absdirpath"
+
+cd $absdirpath
+git add .
+git commit -m "convenience scripts"
+git push origin gh-pages
