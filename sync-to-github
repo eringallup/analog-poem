@@ -11,6 +11,7 @@ fi
 # echo "dirname: $absdirpath"
 
 cd $absdirpath
+git pull
 git add .
-git commit -m "erin updates"
-git push origin gh-pages
+git commit -m "design/content updates"
+git push
