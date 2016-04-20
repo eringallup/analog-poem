@@ -12,5 +12,5 @@ fi
 
 cd $absdirpath
 git add .
-git commit -m "convenience scripts"
+git commit -m "erin updates"
 git push origin gh-pages
