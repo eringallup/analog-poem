@@ -706,7 +706,7 @@
 		}
 
 		.row.\32 00\25 > * {
-			padding: 72px 0 0 72px;
+			padding: 72px 0px 0 72px;
 		}
 
 		.row.\32 00\25 {
@@ -1841,7 +1841,7 @@
 
 	ul.icons {
 		position: relative;
-		background: rgba(128, 128, 128, 0.05);
+		/*background: rgba(128, 128, 128, 0.05);*/
 		border-radius: 4em;
 		display: inline-block;
 		padding: 0.35em 0.75em 0.35em 0.75em;
