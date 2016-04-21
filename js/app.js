@@ -86,6 +86,8 @@
                 infinite: true,
                 speed: 300,
                 fade: true,
+                prevArrow: '<div class="slick-prev"><i class="fa fa-chevron-left"></i></div>',
+                nextArrow: '<div class="slick-next"><i class="fa fa-chevron-right"></i></div>',
                 // adaptiveHeight: true,
                 lazyLoad: 'ondemand',
                 cssEase: 'linear',
@@ -100,8 +102,8 @@
                 infinite: true,
                 arrows: false,
                 speed: 300,
-                slidesToShow: 5,
-                slidesToScroll: 5,
+                slidesToShow: 6,
+                slidesToScroll: 6,
                 cssEase: 'linear'
               });
 

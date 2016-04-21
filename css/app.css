@@ -21,6 +21,7 @@
   padding-bottom: 56.25%; /* 16:9 */
   padding-top: 25px;
   height: 0;
+  background-color: #efefef;
 }
 
 .video-wrapper iframe {
@@ -93,7 +94,13 @@
 .slick-slide {
   outline: none;
 }
+.slick-arrow,
+.slick-arrow:hover {
+  color: #ccc;
+  font-size: 40px;
+}
 .slick-arrow:before {
+  content: '';
   color: #000;
 }
 
@@ -106,8 +113,27 @@
 }
 
 .thumbnails li {
+  position: relative;
   width: 100px;
   height: 80px;
+}
+.thumbnails li > div {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  left: 10px;
+  background-color: #efefef;
+  text-align: center;
+}
+.thumbnails li .play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 40px;
 }
 .thumbnails .current {
   position: relative;
