@@ -101,7 +101,13 @@
 }
 .slick-arrow:before {
   content: '';
+  font-size: inherit;
+  line-height: normal;
+  opacity: 1;
   color: #000;
+}
+.slick-next {
+  right: -15px;
 }
 
 .img-responsive {

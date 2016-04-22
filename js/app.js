@@ -102,8 +102,8 @@
                 infinite: true,
                 arrows: false,
                 speed: 300,
-                slidesToShow: 6,
-                slidesToScroll: 6,
+                slidesToShow: 8,
+                slidesToScroll: 8,
                 cssEase: 'linear'
               });
 
