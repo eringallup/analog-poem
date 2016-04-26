@@ -1,0 +1,19 @@
+---
+class: short
+---
+{% include htmlStart.html %}
+<header class="clearfix">
+  <div id="header" style="background-image: url({{ page.background | default:'images/header1.jpg' }});">
+    <div class="inner">
+      <header>
+        <h1 id="logo">{{ page.title | default:'analog poem' }}</h1>
+      </header>
+    </div>
+    {% include nav.html %}
+  </div>
+</header>
+<div id="content" class="container">
+  {{ content }}
+</div>
+{% include footer.html %}
+{% include htmlEnd.html %}

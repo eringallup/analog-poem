@@ -7,6 +7,9 @@
     $lightbox = angular.element('<div class="lightbox off" />');
     angular.element(document.body).append($lightbox);
 
+    $lightbox.bind('click', function() {
+      $lightbox.addClass('off');
+    });
     angular.element(document.body).bind('keydown', function(e) {
       var code = e.keyCode;
       // console.log(e.keyCode);
@@ -23,11 +26,11 @@
       return {
         restrict: 'EA',
         link: function($scope, $element, $attrs) {
-          var $image = angular.element(document.createElement('img'));
-          $image.attr('src', $attrs.src);
+          var $image = angular.element(document.createElement('div'));
+          $image.attr('style', 'background-image: url(' + $attrs.src + ')').addClass('image');
           $element.bind('click', function(e) {
             e.preventDefault();
-            $lightbox.html(angular.copy($element));
+            $lightbox.html(angular.copy($image));
             $lightbox.removeClass('off');
           });
         }

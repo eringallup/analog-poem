@@ -8,6 +8,25 @@
   opacity: 1;
 }
 
+body.short #header {
+  height: 40vh;
+  min-height: 0;
+}
+body.short #header header {
+  margin: 0;
+}
+
+.list-unstyled {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.list-unstyled li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .clickable {
   cursor: pointer;
 }
@@ -41,8 +60,7 @@
   left: 0;
   bottom: 0;
   z-index: 9999;
-  background-color: rgba(0, 0, 0, .8);
-  padding: 5%;
+  background-color: rgba(0, 0, 0, .9);
   text-align: center;
   -webkit-transform: translateZ(0);
      -moz-transform: translateZ(0);
@@ -63,12 +81,28 @@
 .lightbox a {
   outline: none;
 }
+.lightbox .image {
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  height: 90%;
+  max-height: 50em;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  text-align: center;
+}
 .lightbox img {
   margin: 0 auto;
-  width: auto;
+  width: 100%;
   height: auto;
-  max-width: 100%;
-  max-height: 80vh;
+  max-height: 90vh;
 }
 
 .slideshow {
