@@ -16,6 +16,31 @@ body.short #header header {
   margin: 0;
 }
 
+body{
+  background-color: white;
+}
+
+hr.full-width {
+  position: relative;
+  top: auto;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  display: block;
+}
+hr.full-width:before {
+  display: none;
+}
+hr.full-width:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1em solid #f0f4f4;
+}
+
 .list-unstyled {
   list-style: none;
   margin: 0;
