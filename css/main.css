@@ -1655,10 +1655,6 @@ p, ul, ol, dl, table {
 	margin-bottom: 1em;
 }
 
-p {
-	text-align: center;
-}
-
 br.clear {
 	clear: both;
 }

@@ -9,11 +9,17 @@
 }
 
 body.short #header {
-  height: 40vh;
+  height: 20vh;
   min-height: 0;
 }
 body.short #header header {
   margin: 0;
+}
+body.short #header header h1 {
+  font-size: 3em;
+}
+body.short #header .inner {
+  top: 64%;
 }
 
 body{
@@ -41,6 +47,24 @@ hr.full-width:after {
   border-bottom: 1em solid #f0f4f4;
 }
 
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-justify {
+  text-align: justify;
+}
+
+.font-size-lg {
+  font-size: 22px;
+  line-height: 1.4;
+}
+
 .list-unstyled {
   list-style: none;
   margin: 0;
@@ -58,6 +82,10 @@ hr.full-width:after {
 
 .video-container {
   max-width: 400px;
+}
+
+ul.icons li a {
+  height: auto;
 }
 
 .video-wrapper {
@@ -211,4 +239,8 @@ hr.full-width:after {
   left: 25%;
   right: 25%;
   border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+.credits {
+  text-align: center;
 }
