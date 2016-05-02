@@ -12,7 +12,7 @@
   <ol ng-if="!mobile" class="thumbnails">
     <li ng-repeat="slide in slides" class="clickable {{ current.idx === $index ? 'current' : '' }}" ng-click="goto($index)">
       <div ng-if="slide.video" style="text-align: center;"><i style="color: {{ slide.playIconColor }}" class="play-icon fa fa-play-circle"></i></div>
-      <img ng-if="slide.thumbnail" class="img-responsive" data-lazy="{{ slide.thumbnail }}" alt="">
+      <img ng-if="slide.thumbnail" class="img-responsive" ng-src="{{ slide.thumbnail }}" alt="">
     </li>
   </ol>
   <ol class="unstyled" ng-if="mobile">
