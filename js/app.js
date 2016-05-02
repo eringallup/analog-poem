@@ -3,22 +3,27 @@
 
   var $lightbox;
 
-  var app = angular.module('analogPoem', []).run(function($rootScope) {
+  var app = angular.module('analogPoem', []).run(function($rootScope, $timeout) {
     $lightbox = angular.element('<div class="lightbox off" />');
     angular.element(document.body).append($lightbox);
 
-    $lightbox.bind('click', function() {
-      $lightbox.addClass('off');
-    });
+    $lightbox.bind('click', closeLightbox);
     angular.element(document.body).bind('keydown', function(e) {
       var code = e.keyCode;
       // console.log(e.keyCode);
       switch(code) {
         case 27:
-          $lightbox.addClass('off');
+          closeLightbox();
           break;
       }
     });
+
+    function closeLightbox() {
+      $lightbox.addClass('off');
+      $timeout(function() {
+        $lightbox.html('');
+      }, 300);
+    }
   });
 
   app.directive('magnify', [
@@ -33,6 +38,44 @@
             $lightbox.html(angular.copy($image));
             $lightbox.removeClass('off');
           });
+        }
+      };
+    }
+  ]);
+
+  app.directive('magnifyVideo', [
+    '$sce',
+    function($sce) {
+      return {
+        restrict: 'EA',
+        template: '<div class="video-wrapper video-thumbnail"></div>',
+        link: function($scope, $element, $attrs) {
+          $scope.videoSrc = $sce.trustAsResourceUrl($attrs.magnifyVideo);
+          var $container = angular.element($element[0].querySelector('.video-wrapper'));
+
+          var $iframe = angular.element(document.createElement('iframe'));
+          $iframe.attr('src', $scope.videoSrc);
+          $iframe.attr('width', 800);
+          $iframe.attr('height', 640);
+          $iframe.attr('frameborder', 0);
+          $iframe.attr('webkitallowfullscreen', 'webkitallowfullscreen');
+          $iframe.attr('mozallowfullscreen', 'mozallowfullscreen');
+          $iframe.attr('allowfullscreen', 'allowfullscreen');
+
+          $container.html($iframe).css('position', 'relative');
+
+          var $video = angular.copy($iframe);
+          $video.attr('src', $sce.trustAsResourceUrl($attrs.magnifyVideo + '?autoplay=1'));
+
+          var $clickArea = angular.element(document.createElement('div'));
+          $clickArea.addClass('fill-container');
+          $clickArea.bind('click', function(e) {
+            e.preventDefault();
+            console.warn($video);
+            $lightbox.html(angular.copy($video));
+            $lightbox.removeClass('off');
+          });
+          $container.append($clickArea);
         }
       };
     }
