@@ -107,6 +107,8 @@
           angular.forEach(slides, function(slide, idx) {
             if (slide.nodeType === 1) {
               var newSlide = {};
+              newSlide.playIconColor = slide.getAttribute('play-icon-color') || '#333';
+              console.warn(newSlide);
               if (slide.getAttribute('image')) {
                 newSlide.image = slide.getAttribute('image');
                 newSlide.thumbnail = slide.getAttribute('thumbnail') || newSlide.image;
